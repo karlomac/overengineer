@@ -23,6 +23,7 @@
 	"type": "module",
 	"dependencies": {
 		"appwrite": "^9.0.1",
+		"dotenv": "^16.0.1",
 		"line-intersect": "^3.0.0"
 	}
 }

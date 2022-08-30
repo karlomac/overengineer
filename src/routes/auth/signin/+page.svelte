@@ -1,25 +1,12 @@
 <!-- svelte-ignore missing-declaration -->
 <script>
 // @ts-nocheck
-
-    import { Client, Account } from 'appwrite';
-    import { env } from '$env/dynamic/private';
-    
-    const client = new Client();
-
-    client
-        .setEndpoint(env.API_URL)
-        .setProject(env.API_PROJECT)
-    ;
-
-    const account = new Account(client);
-
     let cl = {
         email: '',
         password: ''
     }
 
-    function logIn() {
+    async function logIn() {
         console.log('login --', cl)
     }
 
@@ -30,7 +17,6 @@
 <section class="w-full px-8 py-16 bg-gray-100 xl:px-8">
     <div class="max-w-5xl mx-auto">
         <div class="flex flex-col items-center md:flex-row">
-
             <div class="w-full space-y-5 md:w-3/5 md:pr-16">
                 <p class="font-medium text-blue-500 uppercase">Over Engineering</p>
                 <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
