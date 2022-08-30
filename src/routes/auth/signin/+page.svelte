@@ -3,12 +3,13 @@
 // @ts-nocheck
 
     import { Client, Account } from 'appwrite';
+    import { env } from '$env/dynamic/private';
     
     const client = new Client();
 
     client
-        .setEndpoint('https://appwrite.lithiumteck.com/v1')
-        .setProject('630cf7a4d97237496a42')
+        .setEndpoint(env.API_URL)
+        .setProject(env.API_PROJECT)
     ;
 
     const account = new Account(client);

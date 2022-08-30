@@ -1,5 +1,15 @@
 <script>
 
+    let cl = {
+        name: '',
+        email: '',
+        password: '',
+    }
+
+    function register() {
+        console.log('register -0', cl)
+    }
+
 </script>
 
 <section class="w-full bg-white">
@@ -22,23 +32,22 @@
             <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
                 <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
                     <h4 class="w-full text-3xl font-bold">Signup</h4>
-                    <p class="text-lg text-gray-500">or, if you have an account you can <a href="#_" class="text-blue-600 underline">sign in</a></p>
+                    <p class="text-lg text-gray-500">or, if you have an account you can <a href="/auth/signin" class="text-blue-600 underline">sign in</a></p>
                     <div class="relative w-full mt-10 space-y-8">
                         <div class="relative">
-                            <label class="font-medium text-gray-900">Name</label>
-                            <input type="text" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Name">
+                            <label  class="font-medium text-gray-900">Name</label>
+                            <input id="name" type="text" bind:value={cl.name} class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Name">
                         </div>
                         <div class="relative">
-                            <label class="font-medium text-gray-900">Email</label>
-                            <input type="text" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Email Address">
+                            <label  class="font-medium text-gray-900">Email</label>
+                            <input id="email" type="text" bind:value={cl.email} class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Email Address">
                         </div>
                         <div class="relative">
                             <label class="font-medium text-gray-900">Password</label>
-                            <input type="password" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Password">
+                            <input id="password" type="password" bind:value={cl.password} class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Password">
                         </div>
                         <div class="relative">
-                            <a href="#_" class="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Create Account</a>
-                            <a href="#_" class="inline-block w-full px-5 py-4 mt-3 text-lg font-bold text-center text-gray-900 transition duration-200 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 ease">Sign up with Google</a>
+                            <a href="#_" on:click={register} class="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Create Account</a>
                         </div>
                     </div>
                 </div>
