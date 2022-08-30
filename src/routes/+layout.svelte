@@ -5,7 +5,7 @@
     import { page } from '$app/stores';
 import '../app.css';
     let showMenu = true;
-    let companyName = 'Thoria Medical';
+    let companyName = 'Theoria Medical';
     let topMenu = [
         { title: 'Count Instances', to: '/count'},
         { title: 'Find Intersection', to: '/find'},
