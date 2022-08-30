@@ -1,4 +1,5 @@
 
+
 export const leftRotation = [
       {
         d: 2,
@@ -26,10 +27,12 @@ export const leftRotation = [
         expectedOutput: [683, 256, 987, 234, 25, 16, 87, 45, 654, 342]
       }
     ]
-    
+
 export const envars = {
-    basePath: import.meta.env.VITE_PUBLIC_API_URL,
-    projecKey: import.meta.env.VITE_PUBLIC_API_PROJECT
+
+    apiUrl: import.meta.env.VITE_PUBLIC_API_URL,
+    apiProject: import.meta.env.VITE_PUBLIC_API_PROJECT
+
 }
 
 export const countInstances = [

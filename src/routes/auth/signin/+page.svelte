@@ -1,13 +1,33 @@
 <!-- svelte-ignore missing-declaration -->
 <script>
-// @ts-nocheck
+    
+    // @ts-nocheck
+    import { goto } from '$app/navigation';
+
+    import { logIn } from '../+page.server';
+    import { envars } from '../../+page';
+
+    console.log('api-url', envars.apiUrl);
+    console.log('api-project', envars.apiProject);
+
+
     let cl = {
         email: '',
         password: ''
     }
 
-    async function logIn() {
-        console.log('login --', cl)
+    var errorMessage = '';
+    var showError = false;
+
+
+    async function signIn(){
+        const result = await logIn(cl)
+        if(!result) {
+            errorMessage = 'Invalid Credentials - Your Email or Password is Invalid';
+            showError = true;
+            return
+        }
+        goto('/projects');
     }
 
 </script>
@@ -35,7 +55,7 @@
                     <input type="text" name="email" bind:value={cl.email} class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Email address">
                     <input type="password" name="password" bind:value={cl.password} class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Password">
                     <div class="block">
-                        <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg" on:click={logIn}>Log Me In</button>
+                        <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg" on:click={signIn}>Log Me In</button>
                     </div>
                     <p class="w-full mt-4 text-sm text-center text-gray-500">Don't have an account? <a href="/auth/signup" class="text-blue-500 underline">Sign up here</a></p>
                 </div>

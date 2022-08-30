@@ -1,4 +1,8 @@
 <script>
+    
+    import { goto } from '$app/navigation';
+
+    import { createAccount } from '../+page.server';
 
     let cl = {
         name: '',
@@ -6,8 +10,18 @@
         password: '',
     }
 
-    function register() {
-        console.log('register -0', cl)
+    let showError = false;
+    let errorMessage = '';
+
+    async function register() {
+        const result = await createAccount(cl);
+        if(!result) {
+            showError = true
+            errorMessage = 'An error occured during registration -- please contact support'
+
+        }
+        console.log('show results --', result)
+
     }
 
 </script>
