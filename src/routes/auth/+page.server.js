@@ -2,6 +2,9 @@
 // this auth specific routes
 import { Client, Account } from 'appwrite';
 
+console.log('api-url',  import.meta.env.VITE_API_URL);
+console.log('api-project',  import.meta.env.VITE_API_PROJECT);
+
 const client = new Client();
 
 const account = new Account(client);

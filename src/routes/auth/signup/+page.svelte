@@ -18,10 +18,8 @@
         if(!result) {
             showError = true
             errorMessage = 'An error occured during registration -- please contact support'
-
         }
-        console.log('show results --', result)
-
+        goto('/auth/signin')
     }
 
 </script>
