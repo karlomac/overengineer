@@ -2,16 +2,15 @@
 // this auth specific routes
 import { Client, Account } from 'appwrite';
 
-console.log('api-url',  import.meta.env.VITE_API_URL);
-console.log('api-project',  import.meta.env.VITE_API_PROJECT);
+let API_URL = import.meta.env.VITE_API_URL;
+let API_PROJECT = import.meta.env.VITE_API_PROJECT;
 
 const client = new Client();
-
 const account = new Account(client);
 
 client
-    .setEndpoint('https://appwrite.lithiumteck.com/v1')
-    .setProject('630cf7a4d97237496a42')
+    .setEndpoint(API_URL)
+    .setProject(API_PROJECT)
     ;
 
 /**

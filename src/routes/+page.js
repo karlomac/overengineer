@@ -31,7 +31,9 @@ export const leftRotation = [
 export const envars = {
 
     apiUrl: import.meta.env.VITE_API_URL,
-    apiProject: import.meta.env.VITE_API_PROJECT
+    apiProject: import.meta.env.VITE_API_PROJECT,
+    appBrand: import.meta.env.VITE_APP_BRAND,
+    appName: import.meta.env.VITE_APP_NAME
 
 }
 

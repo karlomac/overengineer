@@ -3,9 +3,12 @@
 
     // your script goes here
     import { page } from '$app/stores';
-import '../app.css';
+    import { envars } from '../routes/+page';
+
+    import '../app.css';
+
     let showMenu = true;
-    let companyName = 'Theoria Medical';
+    let companyName = envars.appBrand;
     let topMenu = [
         { title: 'Count Instances', to: '/count'},
         { title: 'Find Intersection', to: '/find'},
