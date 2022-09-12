@@ -1,8 +1,8 @@
-# create-svelte
+# Over Engineer Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+The purpose of this project is to demonstrate the use of Svelte, Sveltekit and Tailwind Css with a new backend using AppWrite.
 
-## Creating a project
+## Feel free to clone or fork this project as a sample build.
 
 If you're seeing this, you've probably already done this step. Congrats!
 
